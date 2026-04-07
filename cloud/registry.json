@@ -1,0 +1,29 @@
+{
+  "platforms": {
+    "docker": {
+      "name": "Docker",
+      "description": "Dockerfile and docker-compose for local or any container runtime",
+      "files": ["Dockerfile", "docker-compose.yml"]
+    },
+    "lambda": {
+      "name": "AWS Lambda",
+      "description": "Dockerfile and serverless.yml for AWS Lambda deployment",
+      "files": ["Dockerfile", "serverless.yml", ".env.example"]
+    },
+    "cloud-run": {
+      "name": "Google Cloud Run",
+      "description": "Dockerfile and cloudbuild.yaml for Google Cloud Run deployment",
+      "files": ["Dockerfile", "cloudbuild.yaml"]
+    },
+    "ecs": {
+      "name": "AWS ECS",
+      "description": "Dockerfile and task-definition.json for AWS ECS Fargate deployment",
+      "files": ["Dockerfile", "task-definition.json"]
+    },
+    "kubernetes": {
+      "name": "Kubernetes",
+      "description": "Dockerfile, deployment.yaml, and service.yaml for Kubernetes deployment",
+      "files": ["Dockerfile", "deployment.yaml", "service.yaml"]
+    }
+  }
+}

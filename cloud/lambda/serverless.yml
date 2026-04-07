@@ -1,0 +1,23 @@
+service: {{PROJECT_NAME}}
+
+provider:
+  name: aws
+  runtime: python3.12
+  region: us-east-1
+  timeout: 900
+  memorySize: 512
+
+functions:
+  workflow:
+    handler: {{MODULE_NAME}}.workflow.main
+    events:
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: false
+
+package:
+  individually: true
+  patterns:
+    - "!node_modules/**"
+    - "!.git/**"
+    - "!tests/**"

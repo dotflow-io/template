@@ -1,0 +1,23 @@
+{
+  "family": "{{PROJECT_NAME}}",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "{{PROJECT_NAME}}",
+      "image": "<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/{{PROJECT_NAME}}:latest",
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/{{PROJECT_NAME}}",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
