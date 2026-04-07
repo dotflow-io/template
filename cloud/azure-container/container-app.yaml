@@ -1,0 +1,17 @@
+location: eastus
+name: {{PROJECT_NAME}}
+properties:
+  managedEnvironmentId: /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.App/managedEnvironments/<ENVIRONMENT_NAME>
+  configuration:
+    ingress:
+      external: false
+  template:
+    containers:
+      - name: {{PROJECT_NAME}}
+        image: <ACR_NAME>.azurecr.io/{{PROJECT_NAME}}:latest
+        resources:
+          cpu: 0.25
+          memory: 0.5Gi
+    scale:
+      minReplicas: 0
+      maxReplicas: 1
