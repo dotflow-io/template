@@ -13,6 +13,7 @@ SCHEDULED_PLATFORMS = {"lambda-scheduled", "ecs-scheduled", "cloud-run-scheduled
 PLACEHOLDERS = {
     "PROJECT_NAME": "{{ cookiecutter.project_name }}",
     "MODULE_NAME": "{{ cookiecutter.module_name }}",
+    "STACK_NAME": "{{ cookiecutter.project_name | replace('_', '-') }}",
     "K8S_NAME": "{{ cookiecutter.project_name | replace('_', '-') }}",
     "SCHEDULE_EXPRESSION": "{{ cookiecutter.schedule_expression }}",
     "AWS_ACCOUNT_ID": "{{ cookiecutter.aws_account_id }}",

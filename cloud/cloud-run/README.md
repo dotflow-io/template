@@ -24,3 +24,9 @@ gcloud run deploy <project_name> --source . --region us-central1 --no-allow-unau
 ```bash
 gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=<project_name>" --limit 50 --format="value(textPayload)"
 ```
+
+## Important
+
+- Do not rename `workflow.py` or the `main()` function — the `Dockerfile` CMD depends on it
+- The `cloudbuild.yaml` references `gcp_project_id` and `gcp_region` — these must match your GCP project
+- Enable all required APIs before deploying
