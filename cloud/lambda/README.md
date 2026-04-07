@@ -1,37 +1,37 @@
 # AWS Lambda
 
-**Files:** `Dockerfile`, `handler.py`
+**Files:** `Dockerfile`, `handler.py`, `template.yaml`, `samconfig.toml`
 
 ## Prerequisites
 
 - AWS CLI configured (`aws configure`)
+- [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) (`brew install aws-sam-cli`)
 - Docker
 
 ## Deploy
 
 ```bash
-ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-REGION=us-east-1
-
-# Login to ECR
-aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
-
-# Create repository
-aws ecr create-repository --repository-name <project_name> --region $REGION
-
-# Build and push
-docker build -t <project_name> .
-docker tag <project_name>:latest $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/<project_name>:latest
-docker push $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/<project_name>:latest
-
-# Create Lambda function
-aws lambda create-function \
-  --function-name <project_name> \
-  --package-type Image \
-  --code ImageUri=$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/<project_name>:latest \
-  --role arn:aws:iam::$ACCOUNT_ID:role/lambda-execution-role \
-  --region $REGION
-
-# Invoke
-aws lambda invoke --function-name <project_name> --region $REGION /dev/stdout
+sam build
+sam deploy
 ```
+
+That's it. SAM builds the Docker image, pushes to ECR, and creates the Lambda function.
+
+## Invoke
+
+```bash
+sam remote invoke
+```
+
+## View logs
+
+```bash
+sam logs --stack-name <project_name> --tail
+```
+
+## Important
+
+- Do not rename `handler.py` or the `handler()` function — the `Dockerfile` CMD is `handler.handler`
+- Do not rename `workflow.py` or the `main()` function — `handler.py` imports it
+- The `samconfig.toml` has the stack name, region, and ECR repository pre-configured from cookiecutter
+- To change the schedule or add triggers, edit `template.yaml` (see `lambda-scheduled` template)

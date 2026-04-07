@@ -1,0 +1,8 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "{{STACK_NAME}}"
+region = "{{AWS_REGION}}"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
+image_repository = "{{AWS_ACCOUNT_ID}}.dkr.ecr.{{AWS_REGION}}.amazonaws.com/{{PROJECT_NAME}}"
