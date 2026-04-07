@@ -24,7 +24,7 @@ You'll be prompted for these options:
 | `execution_mode` | Execution (`sequential`, `parallel`, `background`) |
 | `retry` | Enable retry (`no`, `yes`) |
 | `checkpoint` | Enable checkpointing (`no`, `yes`) |
-| `cloud` | Adds deployment files (`none`, `docker`, `lambda`) |
+| `cloud` | Adds deployment files (`none`, `docker`, `lambda`, `ecs`) |
 
 ## Cloud templates
 
@@ -44,7 +44,7 @@ dotflow cloud list
 | `none` | 🚫 | — | — | No deployment files |
 | `docker` | <img alt="Docker" src="https://cdn.simpleicons.org/docker" width="18" /> | Docker | :white_check_mark: | `Dockerfile` and `docker-compose.yml` |
 | `lambda` | <img alt="AWS Lambda" src="https://www.vectorlogo.zone/logos/amazon_awslambda/amazon_awslambda-icon.svg" width="18" /> | AWS Lambda | :white_check_mark: | Container-based Lambda handler template |
-| `ecs` | <img alt="Amazon ECS" src="https://www.vectorlogo.zone/logos/amazon_ecs/amazon_ecs-icon.svg" width="18" /> | AWS ECS (Fargate) | :soon: | Task definition template (often paired with Amazon ECR) |
+| `ecs` | <img alt="Amazon ECS" src="https://www.vectorlogo.zone/logos/amazon_ecs/amazon_ecs-icon.svg" width="18" /> | AWS ECS (Fargate) | :white_check_mark: | Task definition template (often paired with Amazon ECR) |
 | `cloud-run` | <img alt="Google Cloud" src="https://cdn.simpleicons.org/googlecloud" width="18" /> | Google Cloud Run | :soon: | Includes `cloudbuild.yaml` |
 | `kubernetes` | <img alt="Kubernetes" src="https://cdn.simpleicons.org/kubernetes" width="18" /> | Kubernetes | :soon: | Deployment + service manifests |
 | `azure-functions` | <img alt="Microsoft Azure" src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" width="18" /> | Azure Functions | :soon: | `function.json` + `host.json` |
