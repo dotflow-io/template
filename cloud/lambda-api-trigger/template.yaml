@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: "{{PROJECT_NAME}} — API Gateway-triggered dotflow pipeline on AWS Lambda"
+
+Resources:
+  WorkflowFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      FunctionName: {{PROJECT_NAME}}
+      Timeout: 900
+      MemorySize: 512
+      Events:
+        ApiEvent:
+          Type: HttpApi
+          Properties:
+            Path: /workflow
+            Method: POST
+    Metadata:
+      DockerTag: latest
+      DockerContext: .
+      Dockerfile: Dockerfile
+
+Outputs:
+  FunctionArn:
+    Description: Lambda function ARN
+    Value: !GetAtt WorkflowFunction.Arn
+  ApiUrl:
+    Description: API Gateway endpoint
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/workflow"

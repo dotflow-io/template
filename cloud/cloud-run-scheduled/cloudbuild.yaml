@@ -1,0 +1,23 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/{{GCP_PROJECT_ID}}/{{PROJECT_NAME}}", "."]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/{{GCP_PROJECT_ID}}/{{PROJECT_NAME}}"]
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - "{{PROJECT_NAME}}"
+      - "--image"
+      - "gcr.io/{{GCP_PROJECT_ID}}/{{PROJECT_NAME}}"
+      - "--region"
+      - "{{GCP_REGION}}"
+      - "--platform"
+      - "managed"
+      - "--no-allow-unauthenticated"
+
+images:
+  - "gcr.io/{{GCP_PROJECT_ID}}/{{PROJECT_NAME}}"

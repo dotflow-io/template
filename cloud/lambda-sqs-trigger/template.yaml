@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: "{{PROJECT_NAME}} — SQS-triggered dotflow pipeline on AWS Lambda"
+
+Resources:
+  WorkflowFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      FunctionName: {{PROJECT_NAME}}
+      Timeout: 900
+      MemorySize: 512
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt WorkflowQueue.Arn
+            BatchSize: 1
+    Metadata:
+      DockerTag: latest
+      DockerContext: .
+      Dockerfile: Dockerfile
+
+  WorkflowQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: {{PROJECT_NAME}}-queue
+      VisibilityTimeout: 960
+
+Outputs:
+  FunctionArn:
+    Description: Lambda function ARN
+    Value: !GetAtt WorkflowFunction.Arn
+  QueueUrl:
+    Description: SQS queue URL
+    Value: !Ref WorkflowQueue

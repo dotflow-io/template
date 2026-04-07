@@ -1,0 +1,13 @@
+name: {{PROJECT_NAME}}-schedule
+description: "Scheduled trigger for {{PROJECT_NAME}}"
+schedule: "{{SCHEDULE_EXPRESSION}}"
+timeZone: "UTC"
+httpTarget:
+  uri: "https://{{PROJECT_NAME}}-<hash>.{{GCP_REGION}}.run.app"
+  httpMethod: POST
+  oidcToken:
+    serviceAccountEmail: "{{PROJECT_NAME}}-invoker@{{GCP_PROJECT_ID}}.iam.gserviceaccount.com"
+retryConfig:
+  retryCount: 3
+  minBackoffDuration: "5s"
+  maxBackoffDuration: "60s"
