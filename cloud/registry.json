@@ -24,6 +24,41 @@
       "name": "Kubernetes",
       "description": "Dockerfile, deployment.yaml, and service.yaml for Kubernetes deployment",
       "files": ["Dockerfile", "deployment.yaml", "service.yaml"]
+    },
+    "azure-functions": {
+      "name": "Azure Functions",
+      "description": "Dockerfile, function.json, and host.json for Azure Functions deployment",
+      "files": ["Dockerfile", "function.json", "host.json"]
+    },
+    "azure-container": {
+      "name": "Azure Container Apps",
+      "description": "Dockerfile and container-app.yaml for Azure Container Apps deployment",
+      "files": ["Dockerfile", "container-app.yaml"]
+    },
+    "heroku": {
+      "name": "Heroku",
+      "description": "Dockerfile, heroku.yml, and Procfile for Heroku deployment",
+      "files": ["Dockerfile", "heroku.yml", "Procfile"]
+    },
+    "fly-io": {
+      "name": "Fly.io",
+      "description": "Dockerfile and fly.toml for Fly.io edge deployment",
+      "files": ["Dockerfile", "fly.toml"]
+    },
+    "railway": {
+      "name": "Railway",
+      "description": "Dockerfile and railway.json for Railway deployment",
+      "files": ["Dockerfile", "railway.json"]
+    },
+    "render": {
+      "name": "Render",
+      "description": "Dockerfile and render.yaml for Render deployment",
+      "files": ["Dockerfile", "render.yaml"]
+    },
+    "digital-ocean": {
+      "name": "DigitalOcean App Platform",
+      "description": "Dockerfile and app.yaml for DigitalOcean App Platform deployment",
+      "files": ["Dockerfile", "app.yaml"]
     }
   }
 }
