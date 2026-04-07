@@ -8,7 +8,7 @@
     "lambda": {
       "name": "AWS Lambda",
       "description": "Dockerfile and serverless.yml for AWS Lambda deployment",
-      "files": ["Dockerfile", "serverless.yml", ".env.example"]
+      "files": ["Dockerfile", "handler.py", "serverless.yml", ".env.example"]
     },
     "cloud-run": {
       "name": "Google Cloud Run",

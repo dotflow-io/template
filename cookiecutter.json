@@ -5,5 +5,6 @@
     "scheduler": ["none", "cron"],
     "execution_mode": ["sequential", "parallel", "background"],
     "retry": ["no", "yes"],
-    "checkpoint": ["no", "yes"]
+    "checkpoint": ["no", "yes"],
+    "cloud": ["none", "docker", "lambda", "cloud-run", "ecs", "kubernetes", "azure-functions", "azure-container", "heroku", "fly-io", "railway", "render", "digital-ocean"]
 }

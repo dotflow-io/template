@@ -9,7 +9,7 @@ provider:
 
 functions:
   workflow:
-    handler: {{MODULE_NAME}}.workflow.main
+    handler: handler.handler
     events:
       - schedule:
           rate: rate(5 minutes)

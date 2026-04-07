@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install --no-cache-dir -e .
 
-CMD ["{{MODULE_NAME}}.workflow.main"]
+CMD ["handler.handler"]
