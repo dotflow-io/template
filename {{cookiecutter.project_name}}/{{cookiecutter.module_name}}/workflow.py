@@ -1,3 +1,6 @@
+{% if cookiecutter.checkpoint == "yes" -%}
+from uuid import uuid4
+{% endif -%}
 from dotflow import Config, DotFlow
 {% if cookiecutter.storage == "file" -%}
 from dotflow.providers import StorageFile
@@ -62,7 +65,7 @@ config = Config(
 
 def main():
 {%- if cookiecutter.checkpoint == "yes" %}
-    workflow = DotFlow(config=config, workflow_id="{{ cookiecutter.project_name }}")
+    workflow = DotFlow(config=config, workflow_id=uuid4())
 {%- else %}
     workflow = DotFlow(config=config)
 {%- endif %}
