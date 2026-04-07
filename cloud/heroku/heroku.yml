@@ -1,0 +1,10 @@
+build:
+  docker:
+    worker: Dockerfile
+
+run:
+  worker:
+    command:
+      - python
+      - -m
+      - {{MODULE_NAME}}.workflow
