@@ -1,0 +1,13 @@
+app = "{{PROJECT_NAME}}"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[processes]
+  worker = "python -m {{MODULE_NAME}}.workflow"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
