@@ -11,6 +11,9 @@
 ## Deploy
 
 ```bash
+# Create ECR repository (first time only)
+aws ecr create-repository --repository-name <project_name> --region us-east-1
+
 sam build
 sam deploy
 ```
