@@ -41,6 +41,11 @@ def ask_inputs() -> dict:
             "schedule_expression", "rate(6 hours)"
         )
 
+    if CLOUD == "github-actions":
+        placeholders["SCHEDULE_EXPRESSION"] = prompt(
+            "schedule_expression", "0 */6 * * *"
+        )
+
     if CLOUD in {
         "lambda", "lambda-scheduled", "lambda-s3-trigger",
         "lambda-sqs-trigger", "lambda-api-trigger",

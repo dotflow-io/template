@@ -10,10 +10,16 @@
 
 ## Deploy
 
-```bash
-# Create ECR repository (first time only)
-aws ecr create-repository --repository-name <project_name> --region us-east-1
+### Option 1: dotflow deploy
 
+```bash
+dotflow deploy --platform lambda-api-trigger --project <project_name>
+```
+
+### Option 2: SAM CLI
+
+```bash
+aws ecr create-repository --repository-name <project_name> --region us-east-1
 sam build
 sam deploy
 ```
