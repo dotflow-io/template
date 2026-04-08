@@ -41,8 +41,8 @@ Deploy your dotflow pipelines to any major cloud provider. Choose a target platf
 | `render` | <img alt="Render" src="https://cdn.simpleicons.org/render" width="18" /> | Render | :soon: | — |
 | `digital-ocean` | <img alt="DigitalOcean" src="https://cdn.simpleicons.org/digitalocean" width="18" /> | DigitalOcean App Platform | :soon: | — |
 | `step-functions` | <img alt="AWS Lambda" src="https://www.vectorlogo.zone/logos/amazon_awslambda/amazon_awslambda-icon.svg" width="18" /> | AWS Step Functions | :soon: | — |
-| `aws-batch` | <img alt="AWS" src="https://cdn.simpleicons.org/amazonaws" width="18" /> | AWS Batch | :soon: | — |
-| `app-runner` | <img alt="AWS" src="https://cdn.simpleicons.org/amazonaws" width="18" /> | AWS App Runner | :soon: | — |
+| `aws-batch` | <img alt="AWS" src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" width="18" /> | AWS Batch | :soon: | — |
+| `app-runner` | <img alt="AWS" src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" width="18" /> | AWS App Runner | :soon: | — |
 | `cloud-functions` | <img alt="Google Cloud" src="https://cdn.simpleicons.org/googlecloud" width="18" /> | Google Cloud Functions | :soon: | — |
 | `cloud-workflows` | <img alt="Google Cloud" src="https://cdn.simpleicons.org/googlecloud" width="18" /> | Google Cloud Workflows | :soon: | — |
 | `cloud-tasks` | <img alt="Google Cloud" src="https://cdn.simpleicons.org/googlecloud" width="18" /> | Google Cloud Tasks | :soon: | — |
