@@ -8,7 +8,7 @@ from {{MODULE_NAME}}.workflow import main
 
 def handler(event, context):
     """Invoked via HTTP POST through API Gateway."""
-    body = json.loads(event.get("body", "{}"))
+    body = json.loads(event.get("body") or "{}")
     print(f"Received payload: {body}")
 
     result = main()
