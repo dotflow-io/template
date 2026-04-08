@@ -57,9 +57,9 @@ Deploy your dotflow pipelines to any major cloud provider. Choose a target platf
 | `nomad` | <img alt="HashiCorp" src="https://cdn.simpleicons.org/hashicorp" width="18" /> | HashiCorp Nomad | :soon: | — |
 | `terraform` | <img alt="Terraform" src="https://cdn.simpleicons.org/terraform" width="18" /> | Terraform | :soon: | — |
 | `cloudflare-workers` | <img alt="Cloudflare" src="https://cdn.simpleicons.org/cloudflare" width="18" /> | Cloudflare Workers | :soon: | — |
-| `linode` | <img alt="Linode" src="https://cdn.simpleicons.org/linode" width="18" /> | Linode (Akamai) | :soon: | — |
+| `linode` | <img alt="Linode" src="https://api.iconify.design/logos:linode.svg" width="18" /> | Linode (Akamai) | :soon: | — |
 | `vultr` | <img alt="Vultr" src="https://cdn.simpleicons.org/vultr" width="18" /> | Vultr | :soon: | — |
-| `oracle-cloud` | <img alt="Oracle" src="https://cdn.simpleicons.org/oracle" width="18" /> | Oracle Cloud | :soon: | — |
+| `oracle-cloud` | <img alt="Oracle" src="https://api.iconify.design/logos:oracle.svg" width="18" /> | Oracle Cloud | :soon: | — |
 | `civo` | <img alt="Civo" src="https://cdn.simpleicons.org/civo" width="18" /> | Civo | :soon: | — |
 | `proxmox` | <img alt="Proxmox" src="https://cdn.simpleicons.org/proxmox" width="18" /> | Proxmox | :soon: | — |
 | `k3s` | <img alt="K3s" src="https://cdn.simpleicons.org/k3s" width="18" /> | K3s | :soon: | — |
