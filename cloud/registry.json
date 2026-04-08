@@ -3,57 +3,57 @@
     "docker": {
       "name": "Docker",
       "description": "Dockerfile and docker-compose for local or any container runtime",
-      "files": ["Dockerfile", "docker-compose.yml"]
+      "files": ["Dockerfile", "docker-compose.yml", "README.md"]
     },
     "lambda": {
       "name": "AWS Lambda",
       "description": "Dockerfile, handler.py, and SAM template for AWS Lambda",
-      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml"]
+      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml", "README.md"]
     },
     "lambda-scheduled": {
       "name": "AWS Lambda + EventBridge Schedule",
       "description": "Lambda with EventBridge cron/rate trigger via SAM",
-      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml"]
+      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml", "README.md"]
     },
     "lambda-s3-trigger": {
       "name": "AWS Lambda + S3 Trigger",
       "description": "Lambda triggered by S3 file upload via SAM",
-      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml"]
+      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml", "README.md"]
     },
     "lambda-sqs-trigger": {
       "name": "AWS Lambda + SQS Trigger",
       "description": "Lambda triggered by SQS messages via SAM",
-      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml"]
+      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml", "README.md"]
     },
     "lambda-api-trigger": {
       "name": "AWS Lambda + API Gateway",
       "description": "Lambda triggered by HTTP POST via API Gateway",
-      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml"]
+      "files": ["Dockerfile", "handler.py", "template.yaml", "samconfig.toml", "README.md"]
     },
     "ecs": {
       "name": "AWS ECS",
       "description": "Dockerfile and task-definition.json for AWS ECS Fargate deployment",
-      "files": ["Dockerfile", "task-definition.json"]
+      "files": ["Dockerfile", "task-definition.json", "README.md"]
     },
     "ecs-scheduled": {
       "name": "AWS ECS + EventBridge Schedule",
       "description": "ECS Fargate task triggered on a schedule via EventBridge",
-      "files": ["Dockerfile", "template.yaml"]
+      "files": ["Dockerfile", "template.yaml", "README.md"]
     },
     "cloud-run": {
       "name": "Google Cloud Run",
       "description": "Dockerfile and cloudbuild.yaml for Google Cloud Run deployment",
-      "files": ["Dockerfile", "cloudbuild.yaml"]
+      "files": ["Dockerfile", "cloudbuild.yaml", "README.md"]
     },
     "cloud-run-scheduled": {
       "name": "Google Cloud Run + Cloud Scheduler",
       "description": "Cloud Run with Cloud Scheduler cron trigger",
-      "files": ["Dockerfile", "cloudbuild.yaml", "scheduler.yaml"]
+      "files": ["Dockerfile", "cloudbuild.yaml", "scheduler.yaml", "README.md"]
     },
     "kubernetes": {
       "name": "Kubernetes",
       "description": "Dockerfile, deployment.yaml, and service.yaml for Kubernetes deployment",
-      "files": ["Dockerfile", "deployment.yaml", "service.yaml"]
+      "files": ["Dockerfile", "deployment.yaml", "service.yaml", "README.md"]
     },
     "azure-functions": {
       "name": "Azure Functions",
