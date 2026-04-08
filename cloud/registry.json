@@ -170,12 +170,7 @@
       "description": "Infrastructure as Code",
       "files": ["README.md"]
     },
-    "cloudflare-workers": {
-      "name": "Cloudflare Workers",
-      "description": "Serverless edge compute, globally distributed",
-      "files": ["README.md"]
-    },
-    "linode": {
+"linode": {
       "name": "Linode (Akamai)",
       "description": "Cloud servers and managed Kubernetes",
       "files": ["README.md"]

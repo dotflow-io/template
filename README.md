@@ -56,7 +56,6 @@ Deploy your dotflow pipelines to any major cloud provider. Choose a target platf
 | `coolify` | <img alt="Coolify" src="https://cdn.simpleicons.org/coolify" width="18" /> | Coolify | :soon: | — |
 | `nomad` | <img alt="HashiCorp" src="https://cdn.simpleicons.org/hashicorp" width="18" /> | HashiCorp Nomad | :soon: | — |
 | `terraform` | <img alt="Terraform" src="https://cdn.simpleicons.org/terraform" width="18" /> | Terraform | :soon: | — |
-| `cloudflare-workers` | <img alt="Cloudflare" src="https://cdn.simpleicons.org/cloudflare" width="18" /> | Cloudflare Workers | :soon: | — |
 | `linode` | <img alt="Linode" src="https://api.iconify.design/logos:linode.svg" width="18" /> | Linode (Akamai) | :soon: | — |
 | `vultr` | <img alt="Vultr" src="https://cdn.simpleicons.org/vultr" width="18" /> | Vultr | :soon: | — |
 | `oracle-cloud` | <img alt="Oracle" src="https://api.iconify.design/logos:oracle.svg" width="18" /> | Oracle Cloud | :soon: | — |
