@@ -87,12 +87,23 @@ def generate_cloud_files():
     project_dir = Path.cwd()
 
     for filename in platform["files"]:
-        content = fetch_file(CLOUD, filename)
+        try:
+            content = fetch_file(CLOUD, filename)
+        except Exception as err:
+            print(f"  Warning: Failed to fetch {filename}: {err}")
+            continue
+
         content = replace_placeholders(content, placeholders)
-        (project_dir / filename).write_text(content)
+
+        try:
+            (project_dir / filename).write_text(content)
+        except OSError as err:
+            print(f"  Warning: Failed to write {filename}: {err}")
 
 
 try:
     generate_cloud_files()
+except KeyboardInterrupt:
+    print("\nAborted.")
 except Exception as err:
-    print(f"Warning: Could not fetch cloud templates: {err}")
+    print(f"Warning: Could not generate cloud templates: {err}")
