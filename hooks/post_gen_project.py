@@ -8,34 +8,13 @@ CLOUD_URL = (
     "https://raw.githubusercontent.com/dotflow-io/template/master/cloud"
 )
 
-BOLD = "\033[1m"
-CYAN = "\033[36m"
-RESET = "\033[0m"
-
-AWS_PLATFORMS = {
-    "lambda",
-    "lambda-scheduled",
-    "lambda-s3-trigger",
-    "lambda-sqs-trigger",
-    "lambda-api-trigger",
-    "ecs",
-    "ecs-scheduled",
-}
-
-GCP_PLATFORMS = {
-    "cloud-run",
-    "cloud-run-scheduled",
-}
-
-SCHEDULED_PLATFORMS = {
-    "lambda-scheduled",
-    "ecs-scheduled",
-    "cloud-run-scheduled",
-}
-
 CLOUD = "{{ cookiecutter.cloud }}"
 PROJECT_NAME = "{{ cookiecutter.project_name }}"
 MODULE_NAME = "{{ cookiecutter.module_name }}"
+
+BOLD = "\033[1m"
+CYAN = "\033[36m"
+RESET = "\033[0m"
 
 
 def prompt(label: str, default: str = "") -> str:
@@ -55,16 +34,22 @@ def ask_inputs() -> dict:
         "K8S_NAME": PROJECT_NAME.replace("_", "-"),
     }
 
-    if CLOUD in SCHEDULED_PLATFORMS:
+    if CLOUD in {
+        "lambda-scheduled", "ecs-scheduled", "cloud-run-scheduled",
+    }:
         placeholders["SCHEDULE_EXPRESSION"] = prompt(
             "schedule_expression", "rate(6 hours)"
         )
 
-    if CLOUD in AWS_PLATFORMS:
+    if CLOUD in {
+        "lambda", "lambda-scheduled", "lambda-s3-trigger",
+        "lambda-sqs-trigger", "lambda-api-trigger",
+        "ecs", "ecs-scheduled",
+    }:
         placeholders["AWS_ACCOUNT_ID"] = prompt("aws_account_id")
         placeholders["AWS_REGION"] = prompt("aws_region", "us-east-1")
 
-    if CLOUD in GCP_PLATFORMS:
+    if CLOUD in {"cloud-run", "cloud-run-scheduled"}:
         placeholders["GCP_PROJECT_ID"] = prompt("gcp_project_id")
         placeholders["GCP_REGION"] = prompt("gcp_region", "us-central1")
 
