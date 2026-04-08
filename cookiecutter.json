@@ -6,10 +6,5 @@
     "execution_mode": ["sequential", "parallel", "background"],
     "retry": ["no", "yes"],
     "checkpoint": ["no", "yes"],
-    "cloud": ["none", "docker", "lambda", "lambda-scheduled", "lambda-s3-trigger", "lambda-sqs-trigger", "lambda-api-trigger", "ecs", "ecs-scheduled", "cloud-run", "cloud-run-scheduled", "kubernetes"],
-    "schedule_expression": "rate(6 hours)",
-    "aws_account_id": "",
-    "aws_region": "us-east-1",
-    "gcp_project_id": "",
-    "gcp_region": "us-central1"
+    "cloud": ["none", "docker", "lambda", "lambda-scheduled", "lambda-s3-trigger", "lambda-sqs-trigger", "lambda-api-trigger", "ecs", "ecs-scheduled", "cloud-run", "cloud-run-scheduled", "kubernetes"]
 }

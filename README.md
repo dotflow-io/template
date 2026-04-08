@@ -25,7 +25,8 @@ You'll be prompted for these options:
 | `retry` | Enable retry (`no`, `yes`) |
 | `checkpoint` | Enable checkpointing (`no`, `yes`) |
 | `cloud` | Adds deployment files (`none`, `docker`, `lambda`, `lambda-scheduled`, `lambda-s3-trigger`, `lambda-sqs-trigger`, `lambda-api-trigger`, `ecs`, `ecs-scheduled`, `cloud-run`, `cloud-run-scheduled`, `kubernetes`) |
-| `schedule_expression` | Cron or rate expression for scheduled platforms (e.g. `rate(6 hours)`, `cron(0 12 * * ? *)`) |
+
+After selecting a cloud platform, the hook will ask only the relevant questions (e.g. AWS Account ID for AWS platforms, GCP Project ID for GCP platforms, schedule expression for scheduled platforms).
 
 ## Cloud templates
 
