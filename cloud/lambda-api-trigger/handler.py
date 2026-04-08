@@ -1,4 +1,7 @@
+import os
 import json
+
+os.environ.setdefault("DOTFLOW_OUTPUT_PATH", "/tmp/.output")
 
 from {{MODULE_NAME}}.workflow import main
 
