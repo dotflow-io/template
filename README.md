@@ -50,7 +50,7 @@ Deploy your dotflow pipelines to any major cloud provider. Choose a target platf
 | `azure-container-instances` | <img alt="Microsoft Azure" src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" width="18" /> | Azure Container Instances | :soon: | — |
 | `azure-logic-apps` | <img alt="Microsoft Azure" src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" width="18" /> | Azure Logic Apps | :soon: | — |
 | `azure-queue-trigger` | <img alt="Microsoft Azure" src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" width="18" /> | Azure Functions + Queue Trigger | :soon: | — |
-| `github-actions` | <img alt="GitHub Actions" src="https://cdn.simpleicons.org/githubactions" width="18" /> | GitHub Actions | :soon: | [Guide](cloud/github-actions/README.md) |
+| `github-actions` | <img alt="GitHub Actions" src="https://cdn.simpleicons.org/githubactions" width="18" /> | GitHub Actions | `dotflow deploy` | [Guide](cloud/github-actions/README.md) |
 | `gitlab-ci` | <img alt="GitLab" src="https://cdn.simpleicons.org/gitlab" width="18" /> | GitLab CI | :soon: | — |
 | `vercel` | <img alt="Vercel" src="https://cdn.simpleicons.org/vercel" width="18" /> | Vercel | :soon: | — |
 | `coolify` | <img alt="Coolify" src="https://cdn.simpleicons.org/coolify" width="18" /> | Coolify | :soon: | — |
