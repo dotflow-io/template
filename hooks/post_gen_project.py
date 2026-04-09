@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.request import urlopen
 
 CLOUD_URL = (
-    "https://raw.githubusercontent.com/dotflow-io/template/master/cloud"
+    "https://raw.githubusercontent.com/dotflow-io/templates/master/cloud"
 )
 
 CLOUD = "{{ cookiecutter.cloud }}"
