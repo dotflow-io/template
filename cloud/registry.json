@@ -200,10 +200,15 @@
       "description": "Lightweight Kubernetes for edge and IoT",
       "files": ["README.md"]
     },
-    "alibaba-cloud": {
-      "name": "Alibaba Cloud",
-      "description": "Function Compute and container service for Asia market",
-      "files": ["README.md"]
+    "alibaba-fc": {
+      "name": "Alibaba Cloud Function Compute",
+      "description": "Dockerfile, handler.py, and Serverless Devs template for Alibaba Function Compute",
+      "files": ["Dockerfile", "handler.py", "s.yaml", "README.md"]
+    },
+    "alibaba-fc-scheduled": {
+      "name": "Alibaba Cloud Function Compute + Timer Trigger",
+      "description": "Function Compute with Timer Trigger cron schedule via Serverless Devs",
+      "files": ["Dockerfile", "handler.py", "s.yaml", "README.md"]
     }
   }
 }

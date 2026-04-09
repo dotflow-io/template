@@ -38,6 +38,7 @@ def ask_inputs() -> dict:
     if CLOUD in {
         "lambda-scheduled", "ecs-scheduled",
         "cloud-run-scheduled", "github-actions",
+        "alibaba-fc-scheduled",
     }:
         cron = prompt("cron_expression", "0 */6 * * *")
         placeholders["SCHEDULE_EXPRESSION"] = (
@@ -60,6 +61,11 @@ def ask_inputs() -> dict:
     if CLOUD in {"cloud-run", "cloud-run-scheduled"}:
         placeholders["GCP_PROJECT_ID"] = prompt("gcp_project_id")
         placeholders["GCP_REGION"] = prompt("gcp_region", "us-central1")
+
+    if CLOUD in {"alibaba-fc", "alibaba-fc-scheduled"}:
+        placeholders["ALIBABA_NAMESPACE"] = prompt("alibaba_namespace")
+        placeholders["ALIBABA_REGION"] = prompt("alibaba_region", "cn-hangzhou")
+        placeholders["ALIBABA_CR_PASSWORD"] = prompt("alibaba_cr_password")
 
     return placeholders
 
@@ -122,6 +128,36 @@ def generate_cloud_files():
             filepath.write_text(content)
         except OSError as err:
             print(f"  Warning: Failed to write {filename}: {err}")
+
+    generate_env_file(project_dir, placeholders)
+
+
+def generate_env_file(project_dir: Path, placeholders: dict):
+    """Generate .env file with cloud credentials."""
+    env_vars = {}
+
+    if CLOUD in {
+        "lambda", "lambda-scheduled", "lambda-s3-trigger",
+        "lambda-sqs-trigger", "lambda-api-trigger",
+        "ecs", "ecs-scheduled",
+    }:
+        env_vars["AWS_DEFAULT_REGION"] = placeholders.get("AWS_REGION", "us-east-1")
+
+    if CLOUD in {"cloud-run", "cloud-run-scheduled"}:
+        env_vars["GCP_PROJECT_ID"] = placeholders.get("GCP_PROJECT_ID", "")
+        env_vars["GCP_REGION"] = placeholders.get("GCP_REGION", "us-central1")
+
+    if CLOUD in {"alibaba-fc", "alibaba-fc-scheduled"}:
+        env_vars["ALIBABA_CR_PASSWORD"] = placeholders.get("ALIBABA_CR_PASSWORD", "")
+        env_vars["ALIBABA_CLOUD_REGION"] = placeholders.get("ALIBABA_REGION", "cn-hangzhou")
+
+    if not env_vars:
+        return
+
+    env_path = project_dir / ".env"
+    lines = [f"{k}={v}" for k, v in env_vars.items()]
+    env_path.write_text("\n".join(lines) + "\n")
+    print(f"  Created: {env_path}")
 
 
 try:

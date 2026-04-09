@@ -6,5 +6,5 @@
     "execution_mode": ["sequential", "parallel", "background"],
     "retry": ["no", "yes"],
     "checkpoint": ["no", "yes"],
-    "cloud": ["none", "docker", "lambda", "lambda-scheduled", "lambda-s3-trigger", "lambda-sqs-trigger", "lambda-api-trigger", "ecs", "ecs-scheduled", "cloud-run", "cloud-run-scheduled", "kubernetes", "github-actions"]
+    "cloud": ["none", "docker", "lambda", "lambda-scheduled", "lambda-s3-trigger", "lambda-sqs-trigger", "lambda-api-trigger", "ecs", "ecs-scheduled", "cloud-run", "cloud-run-scheduled", "kubernetes", "github-actions", "alibaba-fc", "alibaba-fc-scheduled"]
 }
